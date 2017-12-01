@@ -19,7 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        if Auth.auth().currentUser?.uid == nil {
+            window!.rootViewController = AppDelegate.getVC(withId: "loginVC")
+        } else {
+            window!.rootViewController = AppDelegate.getVC(withId: "mainVC")
+        }
+        
         return true
+    }
+    
+    static func getVC(withId id: String) -> UIViewController {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: id)
+        return vc
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -18,6 +18,7 @@
 		C937F9661FCCA9E300825906 /* firestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9651FCCA9E300825906 /* firestTests.swift */; };
 		C937F9711FCCA9E300825906 /* firestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9701FCCA9E300825906 /* firestUITests.swift */; };
 		C937F97F1FCCAFA400825906 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */; };
+		C9BA89EE1FCE0A2200D93668 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89ED1FCE0A2200D93668 /* MainViewController.swift */; };
 		D20B29C9EC850C6E050EFF74 /* Pods_firestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60978A80AA613528CC6D0F1B /* Pods_firestUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		C937F9701FCCA9E300825906 /* firestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firestUITests.swift; sourceTree = "<group>"; };
 		C937F9721FCCA9E300825906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9BA89ED1FCE0A2200D93668 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				C937F94D1FCCA9E300825906 /* AppDelegate.swift */,
 				C937F94F1FCCA9E300825906 /* ViewController.swift */,
+				C9BA89ED1FCE0A2200D93668 /* MainViewController.swift */,
 				C937F9511FCCA9E300825906 /* Main.storyboard */,
 				C937F9571FCCA9E300825906 /* Assets.xcassets */,
 				C937F9591FCCA9E300825906 /* LaunchScreen.storyboard */,
@@ -474,6 +477,7 @@
 				C937F9501FCCA9E300825906 /* ViewController.swift in Sources */,
 				C937F9561FCCA9E300825906 /* firest.xcdatamodeld in Sources */,
 				C937F94E1FCCA9E300825906 /* AppDelegate.swift in Sources */,
+				C9BA89EE1FCE0A2200D93668 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
