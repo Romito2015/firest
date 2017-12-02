@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import GoogleSignIn
 
 class MainVC: UIViewController {
     
@@ -31,6 +32,7 @@ class MainVC: UIViewController {
                 window!.rootViewController = AppDelegate.getVC(withId: "loginNavVC")
             }
             self.logoutFacebook()
+            self.logoutGoogle()
         } catch let error {
             print("Logout Catched error: \(error.localizedDescription)")
         }
@@ -40,6 +42,12 @@ class MainVC: UIViewController {
         if FBSDKAccessToken.current() != nil {
             FBSDKLoginManager().logOut()
             return
+        }
+    }
+    
+    func logoutGoogle() {
+        if GIDSignIn.sharedInstance().currentUser != nil {
+            GIDSignIn.sharedInstance().signOut()
         }
     }
     

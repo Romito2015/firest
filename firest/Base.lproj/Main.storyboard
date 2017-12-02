@@ -161,12 +161,33 @@
                                     <action selector="customFBLoginAction:" destination="gef-22-0DT" eventType="touchUpInside" id="rNk-Up-dYX"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcw-ke-3Wy" customClass="GIDSignInButton">
+                                <rect key="frame" x="65.5" y="216" width="244" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wIA-Ph-9mn"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChL-TT-F71">
+                                <rect key="frame" x="65" y="280" width="244" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Custom Google Button"/>
+                                <connections>
+                                    <action selector="customGoogleAction:" destination="gef-22-0DT" eventType="touchUpInside" id="tOl-0w-YCy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ChL-TT-F71" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="9La-NE-ds0"/>
+                            <constraint firstItem="Dcw-ke-3Wy" firstAttribute="top" secondItem="2Wl-Sz-vKa" secondAttribute="bottom" constant="24" id="DM7-lc-ZDR"/>
+                            <constraint firstItem="ChL-TT-F71" firstAttribute="width" secondItem="Dcw-ke-3Wy" secondAttribute="width" id="HRg-sx-wEo"/>
+                            <constraint firstItem="ChL-TT-F71" firstAttribute="top" secondItem="Dcw-ke-3Wy" secondAttribute="bottom" constant="24" id="Jsf-c9-Znz"/>
+                            <constraint firstItem="Dcw-ke-3Wy" firstAttribute="width" secondItem="2Wl-Sz-vKa" secondAttribute="width" id="Roj-ff-rkC"/>
                             <constraint firstItem="2Wl-Sz-vKa" firstAttribute="top" secondItem="nOW-vx-Jc0" secondAttribute="bottom" constant="24" id="V7X-fq-iR7"/>
                             <constraint firstItem="nOW-vx-Jc0" firstAttribute="top" secondItem="3hG-LI-Bfk" secondAttribute="top" constant="24" id="cs7-bP-81d"/>
                             <constraint firstItem="nOW-vx-Jc0" firstAttribute="width" secondItem="3hG-LI-Bfk" secondAttribute="width" multiplier="0.65" id="i8u-U7-VF7"/>
+                            <constraint firstItem="Dcw-ke-3Wy" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="lUr-K5-LpU"/>
                             <constraint firstItem="nOW-vx-Jc0" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="n4t-he-YrL"/>
                             <constraint firstItem="2Wl-Sz-vKa" firstAttribute="width" secondItem="nOW-vx-Jc0" secondAttribute="width" id="nqb-cj-aSE"/>
                             <constraint firstItem="2Wl-Sz-vKa" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="tMI-XF-HTT"/>
@@ -175,12 +196,14 @@
                     </view>
                     <connections>
                         <outlet property="customFBLoginButton" destination="2Wl-Sz-vKa" id="j40-NW-o0c"/>
+                        <outlet property="customGoogleButton" destination="ChL-TT-F71" id="R2a-Ot-HpH"/>
                         <outlet property="defaultFBLoginButton" destination="nOW-vx-Jc0" id="pBt-Xc-0PO"/>
+                        <outlet property="defaultGoogleButton" destination="Dcw-ke-3Wy" id="LRo-af-GRK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OD5-34-PnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1530" y="108"/>
+            <point key="canvasLocation" x="1528.8" y="107.49625187406298"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="BxY-Vy-VLC">

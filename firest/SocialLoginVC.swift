@@ -8,16 +8,21 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import GoogleSignIn
 
-class SocialLoginVC: BaseAuth {
+class SocialLoginVC: BaseAuth, GIDSignInUIDelegate {
     
     @IBOutlet weak var defaultFBLoginButton: FBSDKLoginButton!
     @IBOutlet weak var customFBLoginButton: UIButton!
+    @IBOutlet weak var defaultGoogleButton: GIDSignInButton!
+    @IBOutlet weak var customGoogleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.configureFacebook(button: self.defaultFBLoginButton)
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +47,11 @@ class SocialLoginVC: BaseAuth {
             self.showMyFacebookEmailAddress()
         }
     }
+    
+    @IBAction func customGoogleAction(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     func configureFacebook(button: FBSDKLoginButton) {
         button.delegate = self
         button.backgroundColor = .clear
@@ -81,6 +91,34 @@ extension SocialLoginVC: FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Did logout from Facebook")
+    }
+}
+
+//MARK: 🔍 Google SignInDelegate
+extension SocialLoginVC: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print("Failed to log into Google: ", err)
+            return
+        }
+        
+        print("Successfully logged into Google", user)
+        
+        guard let idToken = user.authentication.idToken else { return }
+        guard let accessToken = user.authentication.accessToken else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        Auth.auth().signIn(with: credentials, completion: { (user, error) in
+            if let err = error {
+                print("Failed to create a Firebase User with Google account: ", err)
+                return
+            }
+            
+            guard let uid = user?.uid else { return }
+            super.updateFIRDatabase(withUser: user)
+            print("Successfully logged into Firebase with Google", uid)
+        })
     }
 }
 
