@@ -8,42 +8,39 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
-class MainViewController: UIViewController {
-
+class MainVC: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func logoutAction(_ sender: UIButton) {
         let window = UIApplication.shared.keyWindow
         do {
-            try Auth.auth().signOut()
-            if window!.rootViewController is ViewController {
+            try Auth.auth().signOut() // Sign out from Firebase
+            if window!.rootViewController is MainVC {
                 self.dismiss(animated: true, completion: { })
             } else {
-                window!.rootViewController = AppDelegate.getVC(withId: "loginVC")
+                window!.rootViewController = AppDelegate.getVC(withId: "loginNavVC")
             }
+            self.logoutFacebook()
         } catch let error {
             print("Logout Catched error: \(error.localizedDescription)")
         }
-        
-        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func logoutFacebook(){
+        if FBSDKAccessToken.current() != nil {
+            FBSDKLoginManager().logOut()
+            return
+        }
     }
-    */
-
+    
 }

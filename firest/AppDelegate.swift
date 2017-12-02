@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,15 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        self.setRootVC()
+        
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let hadled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        return hadled
+    }
+    
+    func setRootVC() {
         window = UIWindow(frame: UIScreen.main.bounds)
         if Auth.auth().currentUser?.uid == nil {
-            window!.rootViewController = AppDelegate.getVC(withId: "loginVC")
+            window!.rootViewController = AppDelegate.getVC(withId: "loginNavVC")
         } else {
             window!.rootViewController = AppDelegate.getVC(withId: "mainVC")
         }
-        
-        return true
     }
     
     static func getVC(withId id: String) -> UIViewController {

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ManualLoginVC: BaseAuth {
     
     @IBOutlet weak var authSC: UISegmentedControl!
     @IBOutlet weak var nameTextField: UITextField!
@@ -42,21 +42,23 @@ class ViewController: UIViewController {
         self.isLogin = sender.selectedSegmentIndex == 0
     }
     
+    //MARK: 🔐 Login
     func performLogin() {
         print("LOGIN")
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             print("Cannot Login")
             return
         }
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        Auth.auth().signIn(with: credential) { (user, error) in
             if error != nil {
                 print(error?.localizedDescription ?? "Login error")
             } else {
-                self?.go2Main()
+                self.go2Main()
             }
         }
     }
-    
+    //MARK: 🚀 Register
     func performRegister(){
         print("REGISTER")
         guard let name = nameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {
@@ -64,31 +66,15 @@ class ViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password) {(user, error) in
             if error != nil {
                 print(error?.localizedDescription ?? "Register error")
             }
-            
-            guard let uid = user?.uid else {
-                print("No UID")
-                return
-            }
-            let ref = Database.database().reference(fromURL: "https://firest-dbc22.firebaseio.com/")
-            let usersRef = ref.child("users").child(uid)
-            let values = ["name" : name, "email" : email]
-            usersRef.updateChildValues(values, withCompletionBlock: { (err, ref) in
-                
-                if err != nil {
-                    print(err ?? "Error")
-                } else {
-                    self?.go2Main()
-                }
-                
-                print ("Succesfully added new user to firebase DB")
-            })
+            super.updateFIRDatabase(withUser: user, userName: name)
         }
     }
     
+    //MARK: 🏮 Forgot/Reset password
     @IBAction func forgotPwdAction(_ sender: UIButton) {
         guard let email = self.emailTextField.text else {
             print("No email entered")
@@ -99,10 +85,6 @@ class ViewController: UIViewController {
                 print("ForgotPWD ERROR: \(error?.localizedDescription ?? "*No description*")")
             }
         }
-    }
-    
-    func go2Main(){
-        self.present(AppDelegate.getVC(withId: "mainVC"), animated: true, completion: { })
     }
     
 }

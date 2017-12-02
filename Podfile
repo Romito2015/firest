@@ -11,6 +11,10 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 
+pod 'FBSDKCoreKit'
+pod 'FBSDKShareKit'
+pod 'FBSDKLoginKit'
+
   target 'firestTests' do
     inherit! :search_paths
     # Pods for testing

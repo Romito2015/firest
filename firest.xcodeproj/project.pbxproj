@@ -10,7 +10,7 @@
 		2CEFD37F0085F9FF8C6AC396 /* Pods_firest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A25D209657EAD587D1BE849 /* Pods_firest.framework */; };
 		6D3CC4837F53BDF7CB6FD560 /* Pods_firestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF8085A40D1AC63AF7710B /* Pods_firestTests.framework */; };
 		C937F94E1FCCA9E300825906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F94D1FCCA9E300825906 /* AppDelegate.swift */; };
-		C937F9501FCCA9E300825906 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F94F1FCCA9E300825906 /* ViewController.swift */; };
+		C937F9501FCCA9E300825906 /* ManualLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F94F1FCCA9E300825906 /* ManualLoginVC.swift */; };
 		C937F9531FCCA9E300825906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C937F9511FCCA9E300825906 /* Main.storyboard */; };
 		C937F9561FCCA9E300825906 /* firest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C937F9541FCCA9E300825906 /* firest.xcdatamodeld */; };
 		C937F9581FCCA9E300825906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C937F9571FCCA9E300825906 /* Assets.xcassets */; };
@@ -18,7 +18,10 @@
 		C937F9661FCCA9E300825906 /* firestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9651FCCA9E300825906 /* firestTests.swift */; };
 		C937F9711FCCA9E300825906 /* firestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9701FCCA9E300825906 /* firestUITests.swift */; };
 		C937F97F1FCCAFA400825906 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */; };
-		C9BA89EE1FCE0A2200D93668 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89ED1FCE0A2200D93668 /* MainViewController.swift */; };
+		C9BA89EE1FCE0A2200D93668 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89ED1FCE0A2200D93668 /* MainVC.swift */; };
+		C9BA89F01FD29F3A00D93668 /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */; };
+		C9BA89F31FD3153600D93668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89F21FD3153600D93668 /* Constants.swift */; };
+		C9BA89F51FD3289A00D93668 /* BaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89F41FD3289A00D93668 /* BaseAuth.swift */; };
 		D20B29C9EC850C6E050EFF74 /* Pods_firestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60978A80AA613528CC6D0F1B /* Pods_firestUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +54,7 @@
 		A4165D08565E2A05AEF16A38 /* Pods-firest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firest/Pods-firest.debug.xcconfig"; sourceTree = "<group>"; };
 		C937F94A1FCCA9E300825906 /* firest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C937F94D1FCCA9E300825906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C937F94F1FCCA9E300825906 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C937F94F1FCCA9E300825906 /* ManualLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLoginVC.swift; sourceTree = "<group>"; };
 		C937F9521FCCA9E300825906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C937F9551FCCA9E300825906 /* firest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = firest.xcdatamodel; sourceTree = "<group>"; };
 		C937F9571FCCA9E300825906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +67,11 @@
 		C937F9701FCCA9E300825906 /* firestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firestUITests.swift; sourceTree = "<group>"; };
 		C937F9721FCCA9E300825906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C9BA89ED1FCE0A2200D93668 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C9BA89ED1FCE0A2200D93668 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
+		C9BA89F11FD2CA7100D93668 /* firest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = firest.entitlements; sourceTree = "<group>"; };
+		C9BA89F21FD3153600D93668 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C9BA89F41FD3289A00D93668 /* BaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +150,13 @@
 		C937F94C1FCCA9E300825906 /* firest */ = {
 			isa = PBXGroup;
 			children = (
+				C9BA89F11FD2CA7100D93668 /* firest.entitlements */,
 				C937F94D1FCCA9E300825906 /* AppDelegate.swift */,
-				C937F94F1FCCA9E300825906 /* ViewController.swift */,
-				C9BA89ED1FCE0A2200D93668 /* MainViewController.swift */,
+				C9BA89F21FD3153600D93668 /* Constants.swift */,
+				C9BA89F41FD3289A00D93668 /* BaseAuth.swift */,
+				C937F94F1FCCA9E300825906 /* ManualLoginVC.swift */,
+				C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */,
+				C9BA89ED1FCE0A2200D93668 /* MainVC.swift */,
 				C937F9511FCCA9E300825906 /* Main.storyboard */,
 				C937F9571FCCA9E300825906 /* Assets.xcassets */,
 				C937F9591FCCA9E300825906 /* LaunchScreen.storyboard */,
@@ -252,6 +263,11 @@
 					C937F9491FCCA9E300825906 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					C937F9601FCCA9E300825906 = {
 						CreatedOnToolsVersion = 9.1;
@@ -402,6 +418,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-firest/Pods-firest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -409,6 +429,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -474,10 +498,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C937F9501FCCA9E300825906 /* ViewController.swift in Sources */,
+				C937F9501FCCA9E300825906 /* ManualLoginVC.swift in Sources */,
 				C937F9561FCCA9E300825906 /* firest.xcdatamodeld in Sources */,
 				C937F94E1FCCA9E300825906 /* AppDelegate.swift in Sources */,
-				C9BA89EE1FCE0A2200D93668 /* MainViewController.swift in Sources */,
+				C9BA89F01FD29F3A00D93668 /* SocialLoginVC.swift in Sources */,
+				C9BA89F51FD3289A00D93668 /* BaseAuth.swift in Sources */,
+				C9BA89EE1FCE0A2200D93668 /* MainVC.swift in Sources */,
+				C9BA89F31FD3153600D93668 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +671,7 @@
 			baseConfigurationReference = A4165D08565E2A05AEF16A38 /* Pods-firest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = firest/firest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76YES2398T;
 				INFOPLIST_FILE = firest/Info.plist;
@@ -660,6 +688,7 @@
 			baseConfigurationReference = 7B8C3F5EFD2C3C5C8E55F506 /* Pods-firest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = firest/firest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76YES2398T;
 				INFOPLIST_FILE = firest/Info.plist;
