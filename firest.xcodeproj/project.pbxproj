@@ -18,6 +18,7 @@
 		C937F9661FCCA9E300825906 /* firestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9651FCCA9E300825906 /* firestTests.swift */; };
 		C937F9711FCCA9E300825906 /* firestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9701FCCA9E300825906 /* firestUITests.swift */; };
 		C937F97F1FCCAFA400825906 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */; };
+		C95A99601FD42F4900B16E4E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95A995F1FD42F4900B16E4E /* SafariServices.framework */; };
 		C9BA89EE1FCE0A2200D93668 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89ED1FCE0A2200D93668 /* MainVC.swift */; };
 		C9BA89F01FD29F3A00D93668 /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */; };
 		C9BA89F31FD3153600D93668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89F21FD3153600D93668 /* Constants.swift */; };
@@ -67,6 +68,7 @@
 		C937F9701FCCA9E300825906 /* firestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firestUITests.swift; sourceTree = "<group>"; };
 		C937F9721FCCA9E300825906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C95A995F1FD42F4900B16E4E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		C9BA89ED1FCE0A2200D93668 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
 		C9BA89F11FD2CA7100D93668 /* firest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = firest.entitlements; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95A99601FD42F4900B16E4E /* SafariServices.framework in Frameworks */,
 				2CEFD37F0085F9FF8C6AC396 /* Pods_firest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +108,7 @@
 		2986418F3340EDFF2E1ED096 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C95A995F1FD42F4900B16E4E /* SafariServices.framework */,
 				1A25D209657EAD587D1BE849 /* Pods_firest.framework */,
 				6FCF8085A40D1AC63AF7710B /* Pods_firestTests.framework */,
 				60978A80AA613528CC6D0F1B /* Pods_firestUITests.framework */,
@@ -338,6 +342,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-firest/Pods-firest-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

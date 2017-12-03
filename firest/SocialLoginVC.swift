@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import GoogleSignIn
+import TwitterKit
 
 class SocialLoginVC: BaseAuth, GIDSignInUIDelegate {
     
@@ -16,6 +17,10 @@ class SocialLoginVC: BaseAuth, GIDSignInUIDelegate {
     @IBOutlet weak var customFBLoginButton: UIButton!
     @IBOutlet weak var defaultGoogleButton: GIDSignInButton!
     @IBOutlet weak var customGoogleButton: UIButton!
+    @IBOutlet weak var defaultTwitterButton: TWTRLogInButton!
+    @IBOutlet weak var customTwitterButton: UIButton!
+    
+    var twitterCompletion: TwitterCore.TWTRLogInCompletion?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +28,57 @@ class SocialLoginVC: BaseAuth, GIDSignInUIDelegate {
         self.configureFacebook(button: self.defaultFBLoginButton)
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+        self.setTwitterLoginCompletion()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
+    
+    func setTwitterLoginCompletion() {
+        self.twitterCompletion = { session, error in
+            if (session != nil) {
+                print("signed in as \(session?.userName ?? "")");
+                guard let token = session?.authToken, let secret = session?.authTokenSecret else {
+                    print("Twitter session token & secret not found!")
+                    return
+                }
+                let credentials = TwitterAuthProvider.credential(withToken: token, secret: secret)
+                Auth.auth().signIn(with: credentials, completion: { (user, err) in
+                    if err != nil {
+                        print("Firebase login with Twitter failed: ", err ?? "")
+                    }
+                    super.updateFIRDatabase(withUser: user)
+                })
+            } else {
+                print("error: \(error?.localizedDescription ?? "")");
+            }
+        }
+    }
+    
+    @IBAction func defaultTwitterAction(_ sender: TWTRLogInButton) {
+        if Twitter.sharedInstance().sessionStore.session() != nil {
+            print("You are already logged in to Twitter!")
+            return
+        }
+        guard let completion = self.twitterCompletion else {
+            print("Twitter login completion has not being set!")
+            return
+        }
+        sender.logInCompletion = completion
+    }
+    
+    @IBAction func customTwitterAction(_ sender: UIButton) {
+
+        if Twitter.sharedInstance().sessionStore.existingUserSessions().count != 0 {
+            print("You are already logged in to Twitter!")
+            return
+        }
+        guard let completion = self.twitterCompletion else {
+            print("Twitter login completion has not being set!")
+            return
+        }
+        Twitter.sharedInstance().logIn(completion: completion)
     }
     
     @IBAction func customFBLoginAction(_ sender: UIButton) {

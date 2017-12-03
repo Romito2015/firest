@@ -176,20 +176,48 @@
                                     <action selector="customGoogleAction:" destination="gef-22-0DT" eventType="touchUpInside" id="tOl-0w-YCy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elg-lC-vAN" customClass="TWTRLogInButton">
+                                <rect key="frame" x="65.5" y="334" width="244" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eKb-RF-d2c"/>
+                                </constraints>
+                                <state key="normal" title="Default Twitter login button"/>
+                                <connections>
+                                    <action selector="defaultTwitterAction:" destination="gef-22-0DT" eventType="touchUpInside" id="Dxn-Cf-ZQ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0J-ge-DN9">
+                                <rect key="frame" x="65.5" y="388" width="244" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9dt-sw-wwt"/>
+                                </constraints>
+                                <state key="normal" title="Custom Twitter Button"/>
+                                <connections>
+                                    <action selector="customTwitterAction:" destination="gef-22-0DT" eventType="touchUpInside" id="7rX-Gu-0Cm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="q0J-ge-DN9" firstAttribute="width" secondItem="elg-lC-vAN" secondAttribute="width" id="05t-6p-MMS"/>
+                            <constraint firstItem="q0J-ge-DN9" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="49q-U4-M0l"/>
+                            <constraint firstItem="q0J-ge-DN9" firstAttribute="top" secondItem="elg-lC-vAN" secondAttribute="bottom" constant="24" id="9IV-bA-Nif"/>
                             <constraint firstItem="ChL-TT-F71" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="9La-NE-ds0"/>
                             <constraint firstItem="Dcw-ke-3Wy" firstAttribute="top" secondItem="2Wl-Sz-vKa" secondAttribute="bottom" constant="24" id="DM7-lc-ZDR"/>
                             <constraint firstItem="ChL-TT-F71" firstAttribute="width" secondItem="Dcw-ke-3Wy" secondAttribute="width" id="HRg-sx-wEo"/>
+                            <constraint firstItem="elg-lC-vAN" firstAttribute="top" secondItem="ChL-TT-F71" secondAttribute="bottom" constant="24" id="IAV-4o-K8m"/>
                             <constraint firstItem="ChL-TT-F71" firstAttribute="top" secondItem="Dcw-ke-3Wy" secondAttribute="bottom" constant="24" id="Jsf-c9-Znz"/>
                             <constraint firstItem="Dcw-ke-3Wy" firstAttribute="width" secondItem="2Wl-Sz-vKa" secondAttribute="width" id="Roj-ff-rkC"/>
                             <constraint firstItem="2Wl-Sz-vKa" firstAttribute="top" secondItem="nOW-vx-Jc0" secondAttribute="bottom" constant="24" id="V7X-fq-iR7"/>
                             <constraint firstItem="nOW-vx-Jc0" firstAttribute="top" secondItem="3hG-LI-Bfk" secondAttribute="top" constant="24" id="cs7-bP-81d"/>
+                            <constraint firstItem="elg-lC-vAN" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="gEX-Ie-FCD"/>
                             <constraint firstItem="nOW-vx-Jc0" firstAttribute="width" secondItem="3hG-LI-Bfk" secondAttribute="width" multiplier="0.65" id="i8u-U7-VF7"/>
                             <constraint firstItem="Dcw-ke-3Wy" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="lUr-K5-LpU"/>
                             <constraint firstItem="nOW-vx-Jc0" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="n4t-he-YrL"/>
                             <constraint firstItem="2Wl-Sz-vKa" firstAttribute="width" secondItem="nOW-vx-Jc0" secondAttribute="width" id="nqb-cj-aSE"/>
+                            <constraint firstItem="elg-lC-vAN" firstAttribute="width" secondItem="ChL-TT-F71" secondAttribute="width" id="nwE-Jq-ZXI"/>
                             <constraint firstItem="2Wl-Sz-vKa" firstAttribute="centerX" secondItem="fKB-aX-7g1" secondAttribute="centerX" id="tMI-XF-HTT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3hG-LI-Bfk"/>
@@ -197,8 +225,10 @@
                     <connections>
                         <outlet property="customFBLoginButton" destination="2Wl-Sz-vKa" id="j40-NW-o0c"/>
                         <outlet property="customGoogleButton" destination="ChL-TT-F71" id="R2a-Ot-HpH"/>
+                        <outlet property="customTwitterButton" destination="q0J-ge-DN9" id="jTN-v2-5cf"/>
                         <outlet property="defaultFBLoginButton" destination="nOW-vx-Jc0" id="pBt-Xc-0PO"/>
                         <outlet property="defaultGoogleButton" destination="Dcw-ke-3Wy" id="LRo-af-GRK"/>
+                        <outlet property="defaultTwitterButton" destination="elg-lC-vAN" id="35e-Ea-Eyl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OD5-34-PnX" userLabel="First Responder" sceneMemberID="firstResponder"/>

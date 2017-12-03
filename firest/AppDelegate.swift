@@ -11,6 +11,7 @@ import CoreData
 import Firebase
 import FBSDKCoreKit
 import GoogleSignIn
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
+        Twitter.sharedInstance().start(withConsumerKey:Constants.Twitter.consumerKey, consumerSecret:Constants.Twitter.consumerSecret)
         
         self.setRootVC()
         
@@ -37,8 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().handle(url,
                                           sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!,
                                           annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        let twitterHandle = Twitter.sharedInstance().application(app, open: url, options: options)
         
-        return hadled
+        return hadled || twitterHandle
     }
     
     func setRootVC() {

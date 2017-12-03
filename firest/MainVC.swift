@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import GoogleSignIn
+import TwitterKit
 
 class MainVC: UIViewController {
     
@@ -33,6 +34,7 @@ class MainVC: UIViewController {
             }
             self.logoutFacebook()
             self.logoutGoogle()
+            self.logoutTwitter()
         } catch let error {
             print("Logout Catched error: \(error.localizedDescription)")
         }
@@ -48,6 +50,13 @@ class MainVC: UIViewController {
     func logoutGoogle() {
         if GIDSignIn.sharedInstance().currentUser != nil {
             GIDSignIn.sharedInstance().signOut()
+        }
+    }
+    
+    func logoutTwitter() {
+        let store = Twitter.sharedInstance().sessionStore
+        if let userID = store.session()?.userID {
+            store.logOutUserID(userID)
         }
     }
     

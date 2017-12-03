@@ -17,6 +17,8 @@ pod 'FBSDKLoginKit'
 
 pod 'GoogleSignIn'
 
+pod 'TwitterKit'
+
   target 'firestTests' do
     inherit! :search_paths
     # Pods for testing
