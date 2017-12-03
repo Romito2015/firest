@@ -16,6 +16,14 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = Auth.auth().currentUser
+        if let providers: [UserInfo] = user?.providerData {
+            var str = "\(providers.count) Auth providers:"
+            for provider in providers {
+                str += " \(provider.providerID)"
+            }
+            print(str)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,5 +67,32 @@ class MainVC: UIViewController {
             store.logOutUserID(userID)
         }
     }
+    
+    
+    @IBAction func linkTwitterAction(_ sender: TWTRLogInButton) {
+        sender.logInCompletion = { session, error in
+            if (session != nil) {
+                print("signed in as \(session?.userName ?? "")");
+                guard let token = session?.authToken, let secret = session?.authTokenSecret else {
+                    print("Twitter session token & secret not found!")
+                    return
+                }
+                let credentials = TwitterAuthProvider.credential(withToken: token, secret: secret)
+                let prevUser = Auth.auth().currentUser
+                
+                prevUser?.link(with: credentials, completion: { (updatedUser, err) in
+                    if err != nil {
+                        print("Failed to link Twitter")
+                        return
+                    }
+                    print("Updated user: ", updatedUser!)
+                    print("1111")
+                })
+            } else {
+                print("error: \(error?.localizedDescription ?? "")");
+            }
+        }
+    }
+    
     
 }

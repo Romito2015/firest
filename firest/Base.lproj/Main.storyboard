@@ -250,9 +250,18 @@
                                     <action selector="logoutAction:" destination="0lz-6b-hfl" eventType="touchUpInside" id="U6c-gS-WN7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVd-9C-qdm" customClass="TWTRLogInButton">
+                                <rect key="frame" x="147.5" y="318.5" width="80" height="30"/>
+                                <state key="normal" title="Link Twitter"/>
+                                <connections>
+                                    <action selector="linkTwitterAction:" destination="0lz-6b-hfl" eventType="touchUpInside" id="6oi-CU-KXi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZVd-9C-qdm" firstAttribute="centerX" secondItem="RzT-Ck-Dag" secondAttribute="centerX" id="5Lj-6Q-OEJ"/>
+                            <constraint firstItem="ZVd-9C-qdm" firstAttribute="centerY" secondItem="RzT-Ck-Dag" secondAttribute="centerY" id="DGL-sz-ex0"/>
                             <constraint firstItem="Y5h-9a-ngf" firstAttribute="top" secondItem="bh8-LE-HNg" secondAttribute="top" constant="16" id="J0d-WP-av6"/>
                             <constraint firstItem="Y5h-9a-ngf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RzT-Ck-Dag" secondAttribute="leading" constant="20" symbolic="YES" id="Uzk-Er-ioV"/>
                             <constraint firstItem="bh8-LE-HNg" firstAttribute="trailing" secondItem="Y5h-9a-ngf" secondAttribute="trailing" constant="16" id="mHo-0s-yqn"/>
