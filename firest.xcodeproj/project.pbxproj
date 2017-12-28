@@ -18,6 +18,8 @@
 		C937F9661FCCA9E300825906 /* firestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9651FCCA9E300825906 /* firestTests.swift */; };
 		C937F9711FCCA9E300825906 /* firestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9701FCCA9E300825906 /* firestUITests.swift */; };
 		C937F97F1FCCAFA400825906 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */; };
+		C94F02571FF5989E00979FAC /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F02561FF5989E00979FAC /* FirebaseAuthManager.swift */; };
+		C94F02591FF59DBD00979FAC /* FirebaseDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F02581FF59DBD00979FAC /* FirebaseDBManager.swift */; };
 		C95A99601FD42F4900B16E4E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95A995F1FD42F4900B16E4E /* SafariServices.framework */; };
 		C9BA89EE1FCE0A2200D93668 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89ED1FCE0A2200D93668 /* MainVC.swift */; };
 		C9BA89F01FD29F3A00D93668 /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */; };
@@ -68,6 +70,8 @@
 		C937F9701FCCA9E300825906 /* firestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firestUITests.swift; sourceTree = "<group>"; };
 		C937F9721FCCA9E300825906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C94F02561FF5989E00979FAC /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		C94F02581FF59DBD00979FAC /* FirebaseDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDBManager.swift; sourceTree = "<group>"; };
 		C95A995F1FD42F4900B16E4E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		C9BA89ED1FCE0A2200D93668 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			children = (
 				C9BA89F11FD2CA7100D93668 /* firest.entitlements */,
 				C937F94D1FCCA9E300825906 /* AppDelegate.swift */,
+				C94F02561FF5989E00979FAC /* FirebaseAuthManager.swift */,
+				C94F02581FF59DBD00979FAC /* FirebaseDBManager.swift */,
 				C9BA89F21FD3153600D93668 /* Constants.swift */,
 				C9BA89F41FD3289A00D93668 /* BaseAuth.swift */,
 				C937F94F1FCCA9E300825906 /* ManualLoginVC.swift */,
@@ -511,8 +517,10 @@
 			files = (
 				C937F9501FCCA9E300825906 /* ManualLoginVC.swift in Sources */,
 				C937F9561FCCA9E300825906 /* firest.xcdatamodeld in Sources */,
+				C94F02571FF5989E00979FAC /* FirebaseAuthManager.swift in Sources */,
 				C937F94E1FCCA9E300825906 /* AppDelegate.swift in Sources */,
 				C9BA89F01FD29F3A00D93668 /* SocialLoginVC.swift in Sources */,
+				C94F02591FF59DBD00979FAC /* FirebaseDBManager.swift in Sources */,
 				C9BA89F51FD3289A00D93668 /* BaseAuth.swift in Sources */,
 				C9BA89EE1FCE0A2200D93668 /* MainVC.swift in Sources */,
 				C9BA89F31FD3153600D93668 /* Constants.swift in Sources */,
