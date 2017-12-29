@@ -50,6 +50,7 @@ class ManualLoginVC: BaseAuth {
             return
         }
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+
         Auth.auth().signIn(with: credential) { (user, error) in
             if error != nil {
                 print(error?.localizedDescription ?? "Login error")
