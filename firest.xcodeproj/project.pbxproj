@@ -18,9 +18,15 @@
 		C937F9661FCCA9E300825906 /* firestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9651FCCA9E300825906 /* firestTests.swift */; };
 		C937F9711FCCA9E300825906 /* firestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937F9701FCCA9E300825906 /* firestUITests.swift */; };
 		C937F97F1FCCAFA400825906 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */; };
+		C93984552004BC840072064B /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93984542004BC840072064B /* GoogleManager.swift */; };
+		C93984592004E5E60072064B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93984582004E5E60072064B /* Extensions.swift */; };
+		C939845B20054C9C0072064B /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939845A20054C9C0072064B /* Types.swift */; };
 		C94F02571FF5989E00979FAC /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F02561FF5989E00979FAC /* FirebaseAuthManager.swift */; };
 		C94F02591FF59DBD00979FAC /* FirebaseDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F02581FF59DBD00979FAC /* FirebaseDBManager.swift */; };
+		C94F025B1FF6CD5F00979FAC /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F025A1FF6CD5F00979FAC /* FacebookManager.swift */; };
+		C94F025D1FF6F6A100979FAC /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F025C1FF6F6A100979FAC /* LoginProvider.swift */; };
 		C95A99601FD42F4900B16E4E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95A995F1FD42F4900B16E4E /* SafariServices.framework */; };
+		C9815EDF2002A3D30081C26D /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9815EDE2002A3D30081C26D /* TwitterManager.swift */; };
 		C9BA89EE1FCE0A2200D93668 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89ED1FCE0A2200D93668 /* MainVC.swift */; };
 		C9BA89F01FD29F3A00D93668 /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */; };
 		C9BA89F31FD3153600D93668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA89F21FD3153600D93668 /* Constants.swift */; };
@@ -70,9 +76,15 @@
 		C937F9701FCCA9E300825906 /* firestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firestUITests.swift; sourceTree = "<group>"; };
 		C937F9721FCCA9E300825906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C937F97E1FCCAFA400825906 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C93984542004BC840072064B /* GoogleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleManager.swift; sourceTree = "<group>"; };
+		C93984582004E5E60072064B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C939845A20054C9C0072064B /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		C94F02561FF5989E00979FAC /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		C94F02581FF59DBD00979FAC /* FirebaseDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDBManager.swift; sourceTree = "<group>"; };
+		C94F025A1FF6CD5F00979FAC /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
+		C94F025C1FF6F6A100979FAC /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		C95A995F1FD42F4900B16E4E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		C9815EDE2002A3D30081C26D /* TwitterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
 		C9BA89ED1FCE0A2200D93668 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
 		C9BA89F11FD2CA7100D93668 /* firest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = firest.entitlements; sourceTree = "<group>"; };
@@ -158,11 +170,12 @@
 		C937F94C1FCCA9E300825906 /* firest */ = {
 			isa = PBXGroup;
 			children = (
+				C9BA89F21FD3153600D93668 /* Constants.swift */,
 				C9BA89F11FD2CA7100D93668 /* firest.entitlements */,
 				C937F94D1FCCA9E300825906 /* AppDelegate.swift */,
-				C94F02561FF5989E00979FAC /* FirebaseAuthManager.swift */,
-				C94F02581FF59DBD00979FAC /* FirebaseDBManager.swift */,
-				C9BA89F21FD3153600D93668 /* Constants.swift */,
+				C93984582004E5E60072064B /* Extensions.swift */,
+				C939845A20054C9C0072064B /* Types.swift */,
+				C9815EDC200278820081C26D /* Managers */,
 				C9BA89F41FD3289A00D93668 /* BaseAuth.swift */,
 				C937F94F1FCCA9E300825906 /* ManualLoginVC.swift */,
 				C9BA89EF1FD29F3A00D93668 /* SocialLoginVC.swift */,
@@ -193,6 +206,35 @@
 				C937F9721FCCA9E300825906 /* Info.plist */,
 			);
 			path = firestUITests;
+			sourceTree = "<group>";
+		};
+		C939845C20054CD70072064B /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				C94F025A1FF6CD5F00979FAC /* FacebookManager.swift */,
+				C9815EDE2002A3D30081C26D /* TwitterManager.swift */,
+				C93984542004BC840072064B /* GoogleManager.swift */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		C9815EDC200278820081C26D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C94F025C1FF6F6A100979FAC /* LoginProvider.swift */,
+				C9815EDD200278970081C26D /* Firebase */,
+				C939845C20054CD70072064B /* Social */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C9815EDD200278970081C26D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				C94F02561FF5989E00979FAC /* FirebaseAuthManager.swift */,
+				C94F02581FF59DBD00979FAC /* FirebaseDBManager.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +482,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -452,6 +496,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -516,12 +562,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C937F9501FCCA9E300825906 /* ManualLoginVC.swift in Sources */,
+				C93984552004BC840072064B /* GoogleManager.swift in Sources */,
+				C9815EDF2002A3D30081C26D /* TwitterManager.swift in Sources */,
+				C939845B20054C9C0072064B /* Types.swift in Sources */,
+				C94F025D1FF6F6A100979FAC /* LoginProvider.swift in Sources */,
 				C937F9561FCCA9E300825906 /* firest.xcdatamodeld in Sources */,
 				C94F02571FF5989E00979FAC /* FirebaseAuthManager.swift in Sources */,
 				C937F94E1FCCA9E300825906 /* AppDelegate.swift in Sources */,
 				C9BA89F01FD29F3A00D93668 /* SocialLoginVC.swift in Sources */,
 				C94F02591FF59DBD00979FAC /* FirebaseDBManager.swift in Sources */,
+				C93984592004E5E60072064B /* Extensions.swift in Sources */,
 				C9BA89F51FD3289A00D93668 /* BaseAuth.swift in Sources */,
+				C94F025B1FF6CD5F00979FAC /* FacebookManager.swift in Sources */,
 				C9BA89EE1FCE0A2200D93668 /* MainVC.swift in Sources */,
 				C9BA89F31FD3153600D93668 /* Constants.swift in Sources */,
 			);

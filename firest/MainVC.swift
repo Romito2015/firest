@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FBSDKLoginKit
 import GoogleSignIn
 import TwitterKit
 
@@ -16,58 +15,33 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let user = Auth.auth().currentUser
-        if let providers: [UserInfo] = user?.providerData {
-            var str = "\(providers.count) Auth providers:"
-            for provider in providers {
-                str += " \(provider.providerID)"
-            }
-            print(str)
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        FirebaseAuthManagerImp.printAuthProviders()
     }
     
     @IBAction func logoutAction(_ sender: UIButton) {
-        let window = UIApplication.shared.keyWindow
-        do {
-            try Auth.auth().signOut() // Sign out from Firebase
-            if window!.rootViewController is MainVC {
+        FirebaseAuthManagerImp.logout(didSuccess: {
+            guard let window = UIApplication.shared.keyWindow else { return }
+            if window.rootViewController is MainVC {
                 self.dismiss(animated: true, completion: { })
             } else {
-                window!.rootViewController = AppDelegate.getVC(withId: "loginNavVC")
+                window.rootViewController = AppDelegate.getVC(withId: "loginNavVC")
             }
-            self.logoutFacebook()
+            FacebookManagerImp.logout()
+            TwitterManagerImp.logout()
             self.logoutGoogle()
-            self.logoutTwitter()
-        } catch let error {
-            print("Logout Catched error: \(error.localizedDescription)")
+        }) { (error) in
+            if let theError = error {
+                print(theError.localizedDescription)
+            }
         }
     }
     
-    func logoutFacebook(){
-        if FBSDKAccessToken.current() != nil {
-            FBSDKLoginManager().logOut()
-            return
-        }
-    }
     
     func logoutGoogle() {
         if GIDSignIn.sharedInstance().currentUser != nil {
             GIDSignIn.sharedInstance().signOut()
         }
     }
-    
-    func logoutTwitter() {
-        let store = Twitter.sharedInstance().sessionStore
-        if let userID = store.session()?.userID {
-            store.logOutUserID(userID)
-        }
-    }
-    
     
     @IBAction func linkTwitterAction(_ sender: TWTRLogInButton) {
         sender.logInCompletion = { session, error in
@@ -82,11 +56,11 @@ class MainVC: UIViewController {
                 
                 prevUser?.link(with: credentials, completion: { (updatedUser, err) in
                     if err != nil {
-                        print("Failed to link Twitter")
+                        TwitterManagerImp.logout()
+                        print("Failed to link Twitter: ", err?.localizedDescription ?? "")
                         return
                     }
                     print("Updated user: ", updatedUser!)
-                    print("1111")
                 })
             } else {
                 print("error: \(error?.localizedDescription ?? "")");

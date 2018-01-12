@@ -26,36 +26,42 @@ enum DBInstanceTable: String {
 }
 
 protocol FirebaseDBManager {
-    var referenceDB: DatabaseReference { get }
-    func getReference(forInstanceTable tableDB: DBInstanceTable, withUid uid: String) -> DatabaseReference
-    func updateData(forTableDBReference reference: DatabaseReference,
+    static var referenceDB: DatabaseReference { get }
+    static func getReference(forInstanceTable tableDB: DBInstanceTable, withUid uid: String) -> DatabaseReference
+    static func updateData(forTableDBReference reference: DatabaseReference,
                     withValues values: [String : Any],
                     completion: @escaping DBReferenceCompletion) -> ()
+    static func updateData(forUser user: User?, withName userName: String?, completion: @escaping DBReferenceCompletion)
 }
 
 class FirebaseDBManagerImp: FirebaseDBManager {
     
-    internal var referenceDB: DatabaseReference = Database.database().reference(fromURL: firebaseReference)
+    static var referenceDB: DatabaseReference = Database.database().reference(fromURL: firebaseReference)
     
-    internal func getReference(forInstanceTable tableDB: DBInstanceTable, withUid uid: String) -> DatabaseReference {
+    static func getReference(forInstanceTable tableDB: DBInstanceTable, withUid uid: String) -> DatabaseReference {
         let usersRef: DatabaseReference = referenceDB.child(tableDB.rawValue).child(uid)
         return usersRef
     }
     
-    internal func updateData(forTableDBReference reference: DatabaseReference, withValues values: [String : Any], completion: @escaping (Error?, DatabaseReference) -> ()) {
+    static func updateData(forTableDBReference reference: DatabaseReference, withValues values: [String : Any], completion: @escaping (Error?, DatabaseReference) -> ()) {
         reference.updateChildValues(values) { (error, resultReference) in
             completion(error, resultReference)
         }
     }
-}
-
-extension FirebaseDBManager {
     
-    
-    
-    func updateData(for user: User, with name: String, email: String, completion: @escaping DBReferenceCompletion) {
+    static func updateData(forUser user: User?, withName userName: String? = nil, completion: @escaping DBReferenceCompletion) {
         
-        let userReference = self.getReference(forInstanceTable: .users, withUid: user.uid)
+        var theName = userName
+        if let displayName = user?.displayName {
+            theName = displayName
+        }
+        
+        guard let uid = user?.uid, let name = theName, let email = user?.email else {
+            print("No UID")
+            return
+        }
+        
+        let userReference = self.getReference(forInstanceTable: .users, withUid: uid)
         let values = [keys.user.name : name,
                       keys.user.email : email]
         
@@ -64,9 +70,3 @@ extension FirebaseDBManager {
         }
     }
 }
-
-
-
-
-
-

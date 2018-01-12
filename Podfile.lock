@@ -72,9 +72,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - TwitterCore (3.0.2)
-  - TwitterKit (3.2.1):
-    - TwitterCore (>= 3.0.2)
+  - TwitterCore (3.1.0)
+  - TwitterKit (3.3.0):
+    - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -104,8 +104,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  TwitterCore: e0420b01e02e7d20e94690e37f43e75de219ab8d
-  TwitterKit: 205ac89824bbfe9e85a16c420d30bb7bcbedac45
+  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
+  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
 PODFILE CHECKSUM: c844c2287f2276a28a637ee73569b7d30aa23836
 
